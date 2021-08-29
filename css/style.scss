@@ -1,0 +1,155 @@
+@import "./utility/utility";
+.left__side {
+  padding: 10px;
+  backdrop-filter: var(--blur-20);
+  background: var(--background-dark-gradient);
+  border-radius: var(--radius-10) 0 0 var(--radius-10);
+  .task__input {
+    width: 100%;
+    input {
+      width: 100%;
+      padding: 5px;
+      height: 40px;
+      border: none;
+      outline: none;
+      color: var(--text-gray);
+      border-radius: var(--radius-5);
+      font-weight: var(--font-weight-5);
+      background: var(--input-gradient);
+      box-shadow: var(--input-box-shadow);
+    }
+  }
+  .task__controls {
+    width: 100%;
+    a {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+      align-items: center;
+      transition: all 500ms ease;
+      justify-content: flex-start;
+      font-weight: var(--font-weight-5);
+      background: var(--input-gradient);
+      box-shadow: var(--button-box-shadow);
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+      span {
+        margin-left: 20px;
+        color: var(--text-blue);
+      }
+    }
+  }
+}
+.right__side {
+  overflow: hidden;
+  height: var(--height-80);
+  .search__bar {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border-bottom: 1px solid var(--white);
+    input {
+      width: 40%;
+      height: 40px;
+      border: none;
+      outline: none;
+      background-size: 18px;
+      color: var(--text-gray);
+      transition: all 800ms ease;
+      padding: 20px 0px 20px 40px;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      background-position: 15px 50%;
+      border-radius: var(--radius-5);
+      backdrop-filter: var(--blur-100);
+      font-weight: var(--font-weight-5);
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+      &:focus {
+        width: 100%;
+      }
+    }
+  }
+  .to__do__list {
+    width: 100%;
+    height: calc(80vh - 62px);
+    overflow-y: scroll;
+    table {
+      width: 100%;
+      tbody {
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        tr {
+          gap: 20px;
+          width: 100%;
+          display: grid;
+          padding: 5px 20px;
+          align-items: center;
+          border-radius: var(--radius-10);
+          backdrop-filter: var(--blur-20);
+          background: var(--background-dark-gradient);
+          grid-template-columns: max-content 1fr max-content;
+          th {
+            font-weight: var(--font-weight-5);
+          }
+          td {
+            width: 100%;
+            button {
+              border: none;
+              padding: 2px;
+              outline: none;
+              display: flex;
+              cursor: pointer;
+              align-items: center;
+              justify-content: center;
+              background-color: transparent;
+              transition: all 500ms ease;
+              &:hover {
+                transform: scale(1.2, 1.2);
+              }
+              svg {
+                stroke: var(--red);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .left__side {
+    height: 100%;
+    .task__controls {
+      width: 100%;
+      a {
+        width: max-content;
+        span {
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .right__side {
+    overflow: hidden;
+    height: 100%;
+    .search__bar {
+      height: 60px;
+      padding: 10px;
+      input {
+        width: 60%;
+      }
+    }
+    .to__do__list {
+      height: calc(100% - 62px);
+    }
+  }
+}

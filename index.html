@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+  </head>
+  <body class="position-relative">
+    <main id="app" class="position-absolute m-auto">
+      <div
+        class="
+          left__side
+          d-flex
+          align-items-center
+          justify-content-between
+          flex-column
+        "
+      >
+        <div class="task__input">
+          <input
+            type="text"
+            placeholder="Enter Task"
+            id="addtaskinput"
+            autofocus=""
+          />
+          <input type="hidden" id="saveindex" />
+        </div>
+        <div class="task__controls">
+          <a href="#" type="button" id="addtaskbtn">
+            <img src="./images/svg/add.svg" alt="add" />
+            <span>Add Task</span>
+          </a>
+        </div>
+      </div>
+      <div class="right__side">
+        <div class="search__bar">
+          <form class="d-flex align-items-center justify-content-center">
+            <input placeholder="Search Task" id="searchtextbox" />
+          </form>
+        </div>
+        <div class="to__do__list">
+          <table id="addedtasklist"></table>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>

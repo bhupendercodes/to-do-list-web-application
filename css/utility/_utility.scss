@@ -1,0 +1,43 @@
+@import "./variable";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar);
+  }
+}
+a {
+  text-decoration: none !important;
+}
+body {
+  overflow: hidden;
+  background-size: cover;
+  width: var(--full-width);
+  height: var(--full-height);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/images/body__background.png");
+}
+#app {
+  display: grid;
+  inset: 0 0 0 0;
+  width: var(--width-80);
+  height: var(--height-80);
+  border: 1px solid var(--white);
+  grid-template-columns: 1fr 3fr;
+  border-radius: var(--radius-10);
+  background: var(--background-light-gradient);
+  backdrop-filter: var(--blur-20);
+}
+@media screen and (max-width: 850px) {
+  #app {
+    width: var(--width-90);
+    height: var(--height-90);
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 3fr;
+  }
+}
